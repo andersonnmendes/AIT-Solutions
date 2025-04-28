@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIT Solutions - Soluções Inovadoras em TI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Cabeçalho -->
+    <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-laptop-code text-3xl text-blue-300"></i>
+                <h1 class="text-2xl font-bold">AIT <span class="text-blue-300">Solutions</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="hover:text-blue-300 transition">Início</a>
+                <a href="#servicos" class="hover:text-blue-300 transition">Serviços</a>
+                <a href="#sobre" class="hover:text-blue-300 transition">Sobre Nós</a>
+                <a href="#contato" class="hover:text-blue-300 transition">Contato</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-4 py-2">
+            <a href="#inicio" class="block py-2 hover:text-blue-300">Início</a>
+            <a href="#servicos" class="block py-2 hover:text-blue-300">Serviços</a>
+            <a href="#sobre" class="block py-2 hover:text-blue-300">Sobre Nós</a>
+            <a href="#contato" class="block py-2 hover:text-blue-300">Contato</a>
+        </div>
+        <script>
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+          
+            menuButton.addEventListener('click', () => {
+              if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+              } else {
+                mobileMenu.style.maxHeight = "0px";
+                setTimeout(() => {
+                  mobileMenu.classList.add('hidden');
+                }, 300); // Tempo igual à animação
+              }
+            });
+          
+            // Inicialmente deixa o menu escondido e altura 0
+            window.addEventListener('DOMContentLoaded', () => {
+              mobileMenu.style.overflow = "hidden";
+              mobileMenu.style.transition = "max-height 0.3s ease";
+              mobileMenu.style.maxHeight = "0px";
+            });
+          </script>
+          
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Transformando Negócios com <span class="text-blue-300">Tecnologia</span></h2>
+                <p class="text-xl mb-8">Soluções personalizadas em TI para impulsionar sua empresa no mundo digital.</p>
+                <div class="flex space-x-4">
+                    <a href="#contato" class="bg-blue-400 hover:bg-blue-300 text-blue-900 font-bold py-3 px-6 rounded-lg transition">Fale Conosco</a>
+                    <a href="#servicos" class="border-2 border-blue-300 hover:bg-blue-300 hover:text-blue-900 text-blue-300 font-bold py-3 px-6 rounded-lg transition">Nossos Serviços</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Tecnologia e Inovação" 
+                     class="rounded-lg shadow-2xl max-w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Nossos <span class="text-blue-500">Serviços</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Oferecemos soluções completas em tecnologia da informação para empresas de todos os portes.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Serviço 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition group">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition">
+                        <i class="fas fa-cloud text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Serviços de Suporte em TI e
+                        Help Desk</h3>
+                    <p class="text-gray-600">Atendimento técnico especializado para garantir a continuidade das operações, com suporte remoto e presencial, gestão de chamados e rápida resolução de incidentes.
+                        Foco em eficiência, segurança e satisfação dos usuários.</p>
+                </div>
+                
+                <!-- Serviço 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition group">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition">
+                        <i class="fas fa-shield-alt text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Segurança da Informação</h3>
+                    <p class="text-gray-600">Proteção de dados e sistemas contra ameaças cibernéticas com soluções personalizadas.</p>
+                </div>
+                
+                <!-- Serviço 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition group">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition">
+                        <i class="fas fa-mobile-alt text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Consultoria e Estratégia em TI</h3>
+                    <p class="text-gray-600">Análise, planejamento e implementação de soluções tecnológicas alinhadas aos objetivos do negócio.
+                        Transformamos a TI em um instrumento estratégico para inovação, eficiência e crescimento sustentável.</p>
+                </div>
+                
+                <!-- Serviço 4 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition group">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition">
+                        <i class="fas fa-globe text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Desenvolvimento Web</h3>
+                    <p class="text-gray-600">Sites e sistemas web responsivos, otimizados e com as melhores tecnologias do mercado.</p>
+                </div>
+                
+                <!-- Serviço 5 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition group">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition">
+                        <i class="fas fa-brain text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Inteligência Artificial</h3>
+                    <p class="text-gray-600">Implementação de soluções de IA e machine learning para automação e análise de dados.</p>
+                </div>
+                
+                <!-- Serviço 6 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition group">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition">
+                        <i class="fas fa-headset text-blue-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Suporte Técnico</h3>
+                    <p class="text-gray-600">Assistência técnica especializada 24/7 para resolver seus problemas de TI rapidamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Equipe AIT Solutions" 
+                         class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Sobre a <span class="text-blue-500">AIT Solutions</span></h2>
+                    <p class="text-gray-700 mb-4">A AIT Solutions é especializada em oferecer soluções tecnológicas inovadoras, garantindo eficiência, segurança e estabilidade na gestão de TI e sistemas educacionais.</p>
+                    <p class="text-gray-700 mb-6">Nossa equipe é composta por especialistas altamente qualificados e apaixonados por tecnologia, sempre buscando as melhores soluções para nossos clientes.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span class="text-gray-700">+200 projetos concluídos</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span class="text-gray-700">+50 clientes satisfeitos</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span class="text-gray-700">Equipe certificada</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span class="text-gray-700">Suporte 24/7</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <p class="text-blue-900 font-medium italic">"Nossa missão é entregar soluções tecnológicas que realmente façam a diferença no seu negócio, com qualidade, agilidade e transparência."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">O que nossos clientes <span class="text-blue-300">dizem</span></h2>
+                <p class="max-w-2xl mx-auto text-blue-200">Confira alguns depoimentos de empresas que transformaram seus negócios com nossas soluções.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-blue-800 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold">JS</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">João Silva</h4>
+                            <p class="text-blue-300 text-sm">CEO - TechInova</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 italic">"A AIT Solutions revolucionou nossa infraestrutura de TI. Desde a migração para a nuvem, reduzimos custos em 40% e aumentamos a produtividade da equipe."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 2 -->
+                <div class="bg-blue-800 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold">AM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ana Martins</h4>
+                            <p class="text-blue-300 text-sm">Diretora - VarejoPlus</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 italic">"O aplicativo desenvolvido pela AIT superou nossas expectativas. Nosso faturamento online cresceu 120% nos primeiros 3 meses após o lançamento."</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 3 -->
+                <div class="bg-blue-800 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold">CR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Carlos Rocha</h4>
+                            <p class="text-blue-300 text-sm">Gerente - LogiTech</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 italic">"A solução de segurança implementada protegeu nossa empresa de um ataque cibernético que poderia ter causado prejuízos milionários. Profissionais excepcionais!"</p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Entre em <span class="text-blue-500">Contato</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Estamos prontos para ajudar sua empresa a alcançar novos patamares com tecnologia.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Informações de Contato</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Endereço</h4>
+                                <p class="text-gray-600">Av. Dom José Delgado, 298 - Alemanha/MA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-blue-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Telefone</h4>
+                                <p class="text-gray-600">(98) 992202316</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-blue-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">E-mail</h4>
+                                <p class="text-gray-600">ait.solutionsslz@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-blue-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Horário de Atendimento</h4>
+                                <p class="text-gray-600">Segunda a Sexta: 8h às 18h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold text-blue-900 mb-4">Siga-nos</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center hover:bg-blue-200 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center hover:bg-blue-200 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center hover:bg-blue-200 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center hover:bg-blue-200 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form id="contact-form" class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nome Completo</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">E-mail</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Assunto</label>
+                            <select id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Selecione um assunto</option>
+                                <option value="suporte">Suporte Técnico</option>
+                                <option value="orcamento">Orçamento</option>
+                                <option value="parceria">Parceria Comercial</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-laptop-code text-3xl text-blue-400"></i>
+                        <h2 class="text-2xl font-bold">AIT <span class="text-blue-400">Solutions</span></h2>
+                    </div>
+                    <p class="text-gray-400 mt-2">Soluções Inovadoras em Tecnologia da Informação</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#inicio" class="text-gray-400 hover:text-white transition">Início</a></li>
+                            <li><a href="#servicos" class="text-gray-400 hover:text-white transition">Serviços</a></li>
+                            <li><a href="#sobre" class="text-gray-400 hover:text-white transition">Sobre Nós</a></li>
+                            <li><a href="#contato" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Serviços de Suporte em TI e Help Desk</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Segurança</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Desenvolvimento</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Consultoria</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Legal</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de Uso</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidade</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 AIT Solutions. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
